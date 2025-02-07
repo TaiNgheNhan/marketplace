@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone')->nullable(); // Thêm số điện thoại
             $table->string('address')->nullable(); // Thêm địa chỉ
-            $table->enum('role', ['buyer', 'seller'])->default('buyer'); // Vai trò người dùng
+            $table->tinyInteger('role')->default(0); // 0: Buyer, 1: Seller
             $table->rememberToken();
             $table->timestamps();
         });
